@@ -24,9 +24,15 @@ dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation("ch.qos.logback:logback-classic:$logback_version")
+    implementation("io.ktor:ktor-client-cio-jvm:3.0.0-rc-1")
     testImplementation("io.ktor:ktor-server-test-host-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
+    // JWT
     implementation("io.ktor:ktor-server-auth:$kotlin_version")
     implementation("io.ktor:ktor-server-auth-jwt:$kotlin_version")
+
+    // ContentNegotiation
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$kotlin_version")
+    implementation("io.ktor:ktor-server-content-negotiation:$kotlin_version")
 }

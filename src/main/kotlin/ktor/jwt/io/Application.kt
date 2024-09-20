@@ -1,7 +1,8 @@
 package ktor.jwt.io
 
 import io.ktor.server.application.*
-import ktor.jwt.io.plugins.*
+import ktor.jwt.io.core.module.configurationContentNegotiation
+import ktor.jwt.io.plugins.configureRouting
 
 fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
@@ -9,4 +10,5 @@ fun main(args: Array<String>) {
 
 fun Application.module() {
     configureRouting()
+    configurationContentNegotiation()
 }
