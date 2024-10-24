@@ -2,7 +2,6 @@ package ktor.jwt.io.feature.auth.route
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
-import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import ktor.jwt.io.feature.auth.application.JwtService
@@ -30,9 +29,5 @@ fun Route.AuthRouter() {
                 .sign(Algorithm.HMAC256("Hello"))
             call.respond(mapOf("token" to token))
         }
-    }
-
-    route("/auth") {
-
     }
 }

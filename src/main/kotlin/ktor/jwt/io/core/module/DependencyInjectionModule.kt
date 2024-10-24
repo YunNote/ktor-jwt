@@ -23,11 +23,11 @@ val sampleModule = module {
 }
 
 fun Application.configurationDependencyInjection() {
-//    startKoin{
-//        modules(listOf(appModule, sampleModule))
-//    }
-    install(Koin) {
-        slf4jLogger()
+    startKoin{
         modules(listOf(appModule, sampleModule))
     }
+//    install(Koin) {
+//        slf4jLogger()
+//        modules(listOf(appModule, sampleModule))
+//    }
 }
