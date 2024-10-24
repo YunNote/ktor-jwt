@@ -43,9 +43,9 @@ object DatabaseUtil {
                 validate()
             })
         Database.connect(hikariCp)
-        application.monitor.subscribe(ApplicationStarted) { application ->
-            application.environment.log.info("HikariCp is Running : ${hikariCp.isRunning}")
-        }
+//        monitor.subscribe(ApplicationStarted) { application ->
+//            application.environment.log.info("HikariCp is Running : ${hikariCp.isRunning}")
+//        }
     }
 
 

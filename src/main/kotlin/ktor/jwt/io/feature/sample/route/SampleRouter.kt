@@ -1,5 +1,6 @@
 package ktor.jwt.io.feature.sample.route
 
+import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import ktor.jwt.io.feature.auth.application.dto.PersistSample

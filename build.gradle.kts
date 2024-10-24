@@ -8,7 +8,7 @@ val ktor_version : String by project
 plugins {
     kotlin("jvm") version "2.0.20"
     kotlin("plugin.serialization") version "1.9.10"
-    id("io.ktor.plugin") version "3.0.0"
+    id("io.ktor.plugin") version "2.3.12"
 }
 
 group = "ktor.jwt.io"
@@ -44,8 +44,8 @@ dependencies {
 
 
     // KOIN
-//    implementation("io.insert-koin:koin-ktor:$koin_version")
-//    implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
+    implementation("io.insert-koin:koin-ktor:$koin_version")
+    implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
 
     // Exposed
     implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
