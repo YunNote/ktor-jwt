@@ -3,6 +3,7 @@ val logback_version: String by project
 val koin_version: String by project
 val exposed_version: String by project
 val mysql_version: String by project
+val ktor_version : String by project
 
 plugins {
     kotlin("jvm") version "2.0.20"
@@ -24,10 +25,11 @@ repositories {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-core-jvm")
-    implementation("io.ktor:ktor-server-netty-jvm")
+    implementation("io.ktor:ktor-server-core:$ktor_version") // Ktor Core
+    implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
-    implementation("io.ktor:ktor-client-cio-jvm:3.0.0-rc-1")
+    implementation("io.ktor:ktor-client-cio-jvm:$ktor_version")
     testImplementation("io.ktor:ktor-server-test-host-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 

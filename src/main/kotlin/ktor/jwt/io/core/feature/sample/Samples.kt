@@ -16,6 +16,6 @@ object Samples : BaseIdTable<Long>("users", idType = Long::class) {
 // 엔티티는 단수
 class Sample(id: EntityID<Long>) : BaseEntity<Long>(id, Samples){
     companion object: BaseEntityClass<Sample, Long>(Samples)
-    val name by Samples.name
-    val age by Samples.age
+    var name by Samples.name
+    var age by Samples.age
 }

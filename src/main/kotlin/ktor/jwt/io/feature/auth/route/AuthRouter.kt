@@ -11,12 +11,13 @@ import java.util.*
 
 fun Route.AuthRouter() {
 
-    val JwtService: JwtService by inject<JwtService>();
+    val jwtService: JwtService by inject<JwtService>();
 
     route("/test") {
 
         get {
 
+            jwtService.test()
             call.respond(mapOf("hello" to "world"))
         }
 

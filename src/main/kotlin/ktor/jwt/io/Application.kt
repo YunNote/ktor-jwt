@@ -12,11 +12,10 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
-
-    configurationDataSourceModule()
     configurationDependencyInjection()
-    configureRouting()
+    configurationDataSourceModule()
     configurationContentNegotiation()
-    configurationJwt()
+//    configurationJwt()
+    configureRouting()
 
 }
