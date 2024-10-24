@@ -7,7 +7,8 @@ val ktor_version : String by project
 
 plugins {
     kotlin("jvm") version "2.0.20"
-    id("io.ktor.plugin") version "3.0.0-rc-1"
+    kotlin("plugin.serialization") version "1.9.10"
+    id("io.ktor.plugin") version "3.0.0"
 }
 
 group = "ktor.jwt.io"
@@ -38,12 +39,13 @@ dependencies {
     implementation("io.ktor:ktor-server-auth-jwt:$kotlin_version")
 
     // ContentNegotiation
-    implementation("io.ktor:ktor-serialization-kotlinx-json:$kotlin_version")
     implementation("io.ktor:ktor-server-content-negotiation:$kotlin_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$kotlin_version")
+
 
     // KOIN
-    implementation("io.insert-koin:koin-ktor:$koin_version")
-    implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
+//    implementation("io.insert-koin:koin-ktor:$koin_version")
+//    implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
 
     // Exposed
     implementation("org.jetbrains.exposed:exposed-core:$exposed_version")

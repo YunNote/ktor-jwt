@@ -1,5 +1,6 @@
 package ktor.jwt.io.core.feature.sample
 
+import kotlinx.serialization.Serializable
 import ktor.jwt.io.core.base.BaseEntity
 import ktor.jwt.io.core.base.BaseEntityClass
 import ktor.jwt.io.core.base.BaseIdTable
