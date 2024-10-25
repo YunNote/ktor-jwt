@@ -58,5 +58,5 @@ dependencies {
 
     implementation("mysql:mysql-connector-java:$mysql_version")
 
-
+    implementation("io.ktor:ktor-server-status-pages:$ktor_version")
 }

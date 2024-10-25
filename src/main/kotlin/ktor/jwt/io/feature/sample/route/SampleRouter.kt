@@ -3,6 +3,8 @@ package ktor.jwt.io.feature.sample.route
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import ktor.jwt.io.core.base.ApiException
+import ktor.jwt.io.core.base.ErrorCode
 import ktor.jwt.io.feature.auth.application.dto.PersistSample
 import ktor.jwt.io.feature.sample.application.SampleService
 import org.koin.ktor.ext.inject
@@ -13,8 +15,8 @@ fun Route.SampleRouter() {
 
     route("/sample"){
         get {
-            sampleService.test()
-            call.respond(mapOf("Sample" to "Service"))
+
+            throw ApiException(ErrorCode.SAMPLE_EXCEPTION)
         }
 
         get("/save") {
