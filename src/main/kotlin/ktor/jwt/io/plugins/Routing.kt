@@ -13,6 +13,6 @@ import ktor.jwt.io.feature.sample.route.SampleRouter
 fun Application.configureRouting() {
     routing {
         AuthRouter()
-//        SampleRouter(SampleService(SampleDataprovider(SampleRepositoryImpl())))
+        SampleRouter()
     }
 }
