@@ -3,10 +3,12 @@ val logback_version: String by project
 val koin_version: String by project
 val exposed_version: String by project
 val mysql_version: String by project
+val ktor_version : String by project
 
 plugins {
     kotlin("jvm") version "2.0.20"
-    id("io.ktor.plugin") version "3.0.0-rc-1"
+    kotlin("plugin.serialization") version "1.9.10"
+    id("io.ktor.plugin") version "2.3.12"
 }
 
 group = "ktor.jwt.io"
@@ -24,10 +26,11 @@ repositories {
 }
 
 dependencies {
+    implementation("io.ktor:ktor-server-core:$ktor_version") // Ktor Core
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation("ch.qos.logback:logback-classic:$logback_version")
-    implementation("io.ktor:ktor-client-cio-jvm:3.0.0-rc-1")
+    implementation("io.ktor:ktor-client-cio-jvm:$ktor_version")
     testImplementation("io.ktor:ktor-server-test-host-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
@@ -36,8 +39,9 @@ dependencies {
     implementation("io.ktor:ktor-server-auth-jwt:$kotlin_version")
 
     // ContentNegotiation
-    implementation("io.ktor:ktor-serialization-kotlinx-json:$kotlin_version")
     implementation("io.ktor:ktor-server-content-negotiation:$kotlin_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$kotlin_version")
+
 
     // KOIN
     implementation("io.insert-koin:koin-ktor:$koin_version")

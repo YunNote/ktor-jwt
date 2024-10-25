@@ -1,5 +1,6 @@
 package ktor.jwt.io.core.feature.sample
 
+import kotlinx.serialization.Serializable
 import ktor.jwt.io.core.base.BaseEntity
 import ktor.jwt.io.core.base.BaseEntityClass
 import ktor.jwt.io.core.base.BaseIdTable
@@ -16,6 +17,6 @@ object Samples : BaseIdTable<Long>("users", idType = Long::class) {
 // 엔티티는 단수
 class Sample(id: EntityID<Long>) : BaseEntity<Long>(id, Samples){
     companion object: BaseEntityClass<Sample, Long>(Samples)
-    val name by Samples.name
-    val age by Samples.age
+    var name by Samples.name
+    var age by Samples.age
 }
